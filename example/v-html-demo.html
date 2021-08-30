@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- v-htmlによりHTMLをレンダリングする例 -->
+<!-- v-htmlでは入力値がエスケープされないためXSSの脆弱性があるため注意が必要 -->
+<div id="app-102">
+    <div v-text="message"></div>    <!-- これは置換される -->
+    <div v-html="message"></div>    <!-- これは置換されない -->
+</div>
+<script>
+var app102 = new Vue({
+    el: '#app-102',
+    data: { message: '<b>Hello!</b>' }
+})
+</script>
+</body>
+</html>

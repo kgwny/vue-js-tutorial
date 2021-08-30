@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<title>Vue Test</title>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width-device-width, initial-scale=1">
+</head>
+<div id="app" class="style1">
+    <h3>v-htmlサンプル</h3>
+    <h4>タグが表示されたまま</h4>
+    <p>{{ message1 }}</p>
+    <h4>タグとして認識される</h4>
+    <p v-html="message2"></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        message1: 'v-htmlを使用しない:Hello <strong style="color: green">World!</strong>',
+        message2: 'v-htmlを使用する:Hello <string style="color: green">World!</strong>'
+    }
+})
+</script>
+<style>
+.style1 {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 120px;
+}
+h3 {
+    margin: 40px 0 0;
+    color: #41B883;
+}
+</style>
+</body>
+</html>

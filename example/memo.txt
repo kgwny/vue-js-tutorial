@@ -1,0 +1,26 @@
+Vueの利用方法
+
+CDNにあるライブラリを呼び出す
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+ダウンロード
+https://vuejs.org/v2/guide/installation.html#Direct-it-script-gt-include
+
+開発バージョン
+<script src="./lib/vue.js"></script>
+本番バージョン
+<script src="./lib/vue.min.js></script>
+
+参考：
+Vue.jsの環境構築 (mac)
+https://qiita.com/reflet/items/16f90cbb0db68fd6a498
+
+Node.jsとVue.jsの環境構築（Mac)
+https://zenn.dev/naitoki/articles/0470c2427de5e54ccc76
+
+
+ディレクティブ
+Vueではタグに v-* の属性を指定することができます。これをディレクティブと呼びます。
+Vue.directive() や diectives で独自のカスタムディレクティブを定義することも可能です。

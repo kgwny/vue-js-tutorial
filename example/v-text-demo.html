@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- テキストをレンダリングする例 -->
+<div id="app-101">
+    <div v-text="message"></div>    <!-- この行と -->
+    <div>{{ message }}</div>        <!-- この行は等価である -->
+</div>
+<script>
+var app101 = new Vue({
+    el: '#app-101',
+    data: { message: 'Hello!' }
+})
+</script>
+</body>
+</html>
