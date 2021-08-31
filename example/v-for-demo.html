@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- v-forを用いて配列内の要素をforループして表示する -->
+<div id="app-107">
+    <ul>
+        <li v-for="color in colorList">{{ color }}</li>
+    </ul>
+</div>
+<script>
+    var app107 = new Vue({
+        el: '#app-107',
+        data: { colorList: ['Red', 'Green', 'Blue' ] }
+    })
+</script>
+</body>
+</html>

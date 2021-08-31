@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- v-else-ifを用いて条件により表示を制御する -->
+ラジオボタンの切り替えによりメッセージ表示を切り替える
+<div id="app-106">
+    <input type="radio" name="app106-type" onclick="app106.type='A'" checked>
+    <input type="radio" name="app106-type" onclick="app106.type='B'">
+    <input type="radio" name="app106-type" onclick="app106.type='C'">
+    <span v-if="type=='A'">Good morning.</span>
+    <span v-else-if="type=='B'">Hello!</span>
+    <span v-else>Bye!</span>
+</div>
+<script>
+    var app106 = new Vue({
+        el: '#app-106',
+        data: { type: 'A' }
+    })
+</script>
+</body>
+</html>

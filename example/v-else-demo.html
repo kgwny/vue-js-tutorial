@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- v-elseを用いて条件により表示を制御する -->
+<div id="app-105">
+    <input type="checkbox" @click="change" checked>
+    <span v-if="seen">Hello!</span>     <!-- seenがtrueのときはHello!を表示する -->
+    <span v-else>Bye!</span>            <!-- seenがfalseのときはBye!を表示する -->
+</div>
+<script>
+    var app105 = new Vue({
+        el: '#app-105',
+        data: { seen: true },
+        methods: {
+            change: function(e) {
+                this.seen = e.target.checked
+            }
+        }
+    })
+</script>
+</body>
+</html>
