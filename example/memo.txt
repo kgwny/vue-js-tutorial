@@ -24,3 +24,7 @@ https://zenn.dev/naitoki/articles/0470c2427de5e54ccc76
 ディレクティブ
 Vueではタグに v-* の属性を指定することができます。これをディレクティブと呼びます。
 Vue.directive() や diectives で独自のカスタムディレクティブを定義することも可能です。
+
+
+v-on には修飾子を付与することができます。
+例）v-on:click.once、@click.once

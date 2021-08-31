@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- イベント処理 -->
+<!-- v-on: はイベントを処理する -->
+<!-- @ は v-on: の省略形 -->
+<div id="app-108">
+    <button v-on:click="hello">Hello</button>
+    <button @click="hello">Hello</button>
+</div>
+<!-- v-on:click と @click は等価 -->
+<script>
+    var app108 = new Vue({
+        el: '#app-108',
+        methods: {
+            hello: function() {
+                alert("Hello!");
+            }
+        }
+    })
+</script>
+</body>
+</html>
