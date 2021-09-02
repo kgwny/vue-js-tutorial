@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- v-modelを用いて入力フォームにモデルを割り当てる -->
+<div id="app-120">
+    <input v-model="message">
+    <div>Message: {{ message }}</div>
+</div>
+<script>
+    var app120 = new Vue({
+        el: '#app-120',
+        data: { message: 'Hello!' }
+    })
+</script>
+</body>
+</html>

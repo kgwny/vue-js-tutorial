@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- v-cloakを用いて画面表示時に{{...}}が表示されないよう対処する -->
+<style>
+[v-cloak] { display: none }
+</style>
+<div id="app-122">
+    <button onclick="location.reload()">再表示</button>
+    <div>Message: <span v-cloak>{{ message }}</span></div>
+    <div>Message: <span>{{ message }}</span></div>
+</div>
+<!-- 意図的に1秒遅らせる -->
+<script>
+    window.setTimeout(function() {
+        var app122 = new Vue({
+            el: '#app-122',
+            data: { message: 'Hello!' }
+        })
+    }, 1000);
+</script>
+</body>
+</html>

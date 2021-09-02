@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- v-preを用いてテキストを出力する -->
+v-preをつくことにより中括弧をそのまま表示することができる
+<div id="app-121">
+    <div v-pre>Message: {{ message }}</div>
+    <div>Message: {{ message }}</div>
+</div>
+<script>
+    var app121 = new Vue({
+        el: '#app-121',
+        data: { message: 'Hello' }
+    })
+</script>
+</body>
+</html>
