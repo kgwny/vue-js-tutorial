@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- 
+    Vueコンポーネントの使用例
+    Vue.component()はVue独自の要素を定義します。
+    この例では、'<strong>Hello!</strong>'を表示する<my-element-140>を定義しています。
+// -->
+<div id="app-140">
+    <my-element-140></my-element-140>
+</div>
+<script>
+    Vue.component('my-element-140', {
+        template: '<strong>Hello!</strong>'
+    })
+    var app140 = new Vue({
+        el: '#app-140',
+    })
+</script>
+</body>
+</html>

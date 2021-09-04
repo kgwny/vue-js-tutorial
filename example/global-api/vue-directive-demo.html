@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- 
+    Vue.directive()による、カスタムディレクティブの登録
+// -->
+<div id="app-144">
+    <div v-font16>Hello!</div>
+</div>
+<script>
+    Vue.directive('font16', {
+        inserted: function(el) {
+            el.style.fontSize = '16pt'
+        }
+    })
+    var app144 = new Vue({
+        el: '#app-144'
+    })
+</script>
+</body>
+</html>

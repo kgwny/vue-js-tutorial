@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    Vue.nextTick()の使用例 DOM更新サイクル後の実行
+    Vue.nextTick()は一連のDOM更新サイクル完了後に実行すべきコールバック関数を登録します。
+    この例では、app142.messageを変更した直後ではまだDOMは更新されておらず、コンソールには Hello! が出力されます。
+    nextTick() で登録したコールバック関数は、DOM更新サイクル終了後に呼び出されるため、
+    DOMの情報も Bye! に更新されていることが確認できます。
+//-->
+<div id="app-142">
+    <div>{{ message }}</div>
+</div>
+<script>
+    var app142 = new Vue({
+        el: '#app-142',
+        data: {
+            message: 'Hello!',
+            msg1: '',
+            msg2: ''
+        }
+    })
+    app142.message = 'Bye!'
+    console.log(app142.$el.textContent)
+    Vue.nextTick(function() {
+        console.log(app142.$el.textContent)
+    })
+</script>
+</body>
+</html>

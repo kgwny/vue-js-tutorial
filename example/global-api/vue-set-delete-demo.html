@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    Vue.set()による、非リアクティブデータの設定 と Vue.delete()による、非リアクティブデータの削除
+    Vue.set()は、オブジェクトのプロパティを設定し、必要に応じてViewの更新を行います。
+    Vue.delete()は、オブジェクトのプロパティを削除し、必要に応じてViewの更新を行います。
+
+    Vueでは、dataで指定された各データに対して内部的に getter/setter を用意し、データの変更を監視してViewへ反映します。
+    これをリアクティブなデータと呼びます。
+    しかし、データ内部のプロパティが追加・削除された場合は、その変更を検出することができません。
+
+    この例では、this.colorList.blue = '#00f' としてプロパティを追加/削除する代わりに
+    Vue.set()/Vue.delete()を用いて追加/削除することにより、
+    データが変更されたことをVueが検知して、Viewへ反映させています。
+//-->
+<div id="app-143">
+    <input type="button" @click="addBlue" value="Add">
+    <input type="button" @click="deleteBlue" value="Delete">
+    <ul>
+        <li v-for="(value, key) in colorList">{{ key }} = {{ value }}</li>
+    </ul>
+</div>
+<script>
+    var app143 = new Vue({
+        el: '#app-143',
+        data: {
+            colorList: {
+                red: '#f00',
+                green: '#0f0'
+            }
+        },
+        methods: {
+            addBlue: function() {
+                Vue.set(this.colorList, 'blue', '#00f')
+            },
+            deleteBlue: function() {
+                Vue.delete(this.colorList, 'blue')
+            }
+        }
+    })
+</script>
+</body>
+</html>

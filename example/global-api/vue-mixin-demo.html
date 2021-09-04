@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    グローバルミックスインの定義と呼び出し
+    ミックスインはライブラリのように取り込んで利用することが可能な部品です。
+    この例では、helloというメソッドを持つmuMixinを定義しｈ、それをmixinsで取り込んでいます。
+// -->
+<div id="app-261">
+    <input type="button" @click="hello" value="Say Hello">
+</div>
+<script>
+    var myMixin = {
+        methods: {
+            hello: function() {
+                alert("Hello!");
+            }
+        }
+    }
+    var app261 = new Vue({
+        el: '#app-261',
+        mixins: [ myMixin ]
+    })
+    Vue.mixin({
+        created: function() {
+            console.log(this)
+        }
+    })
+</script>
+</body>
+</html>

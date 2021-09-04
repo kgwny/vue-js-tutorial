@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- 
+    TODO: Vue.compile() は、{{ message }} などの文字列をあらかじめコンパイルします。
+//-->
+<script>
+    var res = Vue.compile('<div>({ message })</div>');
+    new Vue({
+        data: { message: 'Hello!' },
+        render: res.render,
+        staticRenderFns: res.staticRenderFns
+    })
+</script>
+</body>
+</html>

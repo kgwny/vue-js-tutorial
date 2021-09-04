@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- 
+    Vue.filer() の使用例
+    {{ 変数名 }} の箇所には {{ 変数名 | フィルタ1 | フィルタ2 ・・・}} のようにいくつかのフィルタを記述することができます。
+    Vue.filer() を用いて、toupper フィルタを定義しています。
+// -->
+<div id="app-145">
+    <div>{{ message | toupper }}</div>
+</div>
+<script>
+    Vue.filter('toupper', function(value) {
+        return value.toUpperCase()
+    })
+    var app145 = new Vue({
+        el: '#app-145',
+        data: { message: 'Hello!' }
+    })
+</script>
+</body>
+</html>

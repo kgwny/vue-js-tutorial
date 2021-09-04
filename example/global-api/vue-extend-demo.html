@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    Vue.extend()の使用例
+    Vue.extend()は第2引数で指定可能なコンポーネントのサブクラスを生成します。
+//-->
+<div id="app-141">
+    <my-component-141></my-component-141>
+</div>
+<script>
+    var MyComponent141 = Vue.extend({
+        template: '<strong>Hello!</storng>'
+    })
+    Vue.component('my-component-141', MyComponent141)
+    var app141 = new Vue({
+        el: '#app-141',
+    })
+</script>
+</body>
+</html>
