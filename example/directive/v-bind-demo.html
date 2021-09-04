@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!-- v-bindを用いてHTMLの属性を指定する -->
+<div id="app-109">
+    <input type="button" v-bind:value="message">
+    <input type="button" :value="message">  <!-- :は:v-bindの省略形 -->
+</div>
+<script>
+    var app109 = new Vue({
+        el: '#app-109',
+        data: { message: 'Hello!' }
+    })
+</script>
+</body>
+</html>

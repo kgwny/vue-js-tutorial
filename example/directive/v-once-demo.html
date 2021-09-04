@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    v-onceを用いてHTMLを一度だけ表示する
+    v-onceはレンダリングを一度だけ実行する
+    以降は変数の値が変わったとしても表示に影響しない
+//-->
+<div id="app-123">
+    <input type="text" name="text1" v-model:value="message">
+    <div>Message: <span v-once>{{ message }}</span></div>
+    <div>Message: <span>{{ message }}</span></div>
+</div>
+<script>
+    var app123 = new Vue({
+        el: '#app-123',
+        data: { message: 'Hello' }
+    })
+</script>
+</body>
+</html>
