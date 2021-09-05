@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    データを保持するには data を使う
+    {{...}} のみならず v-bind や v-model からの参照にも用いる
+//-->
+<div id="app-201">{{ message }}</div>
+<script>
+    var app201 = new Vue({
+        el: '#app-201',
+        data: { message: 'Hello!' } // data設定
+    })
+</script>
+</body>
+</html>

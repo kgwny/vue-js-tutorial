@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    props を用いてコンポーネントにパラメータを引き渡す
+    props はtemplateなどのコンポーネント内部で使用する属性を定義します。
+    この例では <my-element-202> のvalue属性に大して、propsで宣言することにより、
+    template の内部でvalueの値を参照することが可能となります。
+//-->
+<div id="app-202">
+    <my-element-202 value="Hello!"></my-element-202>
+</div>
+<script>
+    Vue.component('my-element-202', {
+        props: [ 'value' ],
+        template: '<div>{{ value }}</div>'
+    })
+    var app202 = new Vue({
+        el: '#app-202'
+    })
+</script>
+</body>
+</html>

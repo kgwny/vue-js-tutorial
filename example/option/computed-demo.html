@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    computed は算出プロパティを生成します。
+    この例では、messageプロパティを基にして、入力値を大文字に変換して表示します。
+//-->
+<div id="app-204">
+    <div><input v-model="message"></div>
+    <div>Message: {{ upperMessage }}</div>
+</div>
+<script>
+    var app204 = new Vue({
+        el: '#app-204',
+        data: {
+            message: 'Hello'
+        },
+        computed: {
+            upperMessage: function() {
+                return this.message.toUpperCase();  // 大文字に変換
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    propsData を用いて、インスタンス作成中の props データを指定します。
+    主に Vue の単体テストを支援するためにつかいます。
+//-->
+<div id="app-203">
+    <div id="el-203"></div>
+</div>
+<script>
+    var MyElement203 = Vue.extend({
+        props: [ 'message' ],
+        template: '<div>{{ message }}</div>'
+    })
+    var vm = new MyElement203({
+        propsData: { message: 'Hello!' }
+    }).$mount('#el-203');
+    var app203 = new Vue({
+        el: '#app-203'
+    })
+</script>
+</body>
+</html>

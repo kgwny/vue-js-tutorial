@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    methods は、v-on のイベントハンドラとして呼び出されるメソッドを定義します。
+//-->
+<div id="app-205">
+    <button @click="toUpper">change upper</button>
+    <button @click="upLower">change lower</button>
+    <div>{{ message }}</div>
+</div>
+<script>
+    var app205 = new Vue({
+        el: '#app-205',
+        data: {
+            message: 'Hello',
+        },
+        methods: {
+            toUpper: function() {
+                this.message = this.message.toUpperCase();
+            },
+            toLower: function() {
+                this.message = this.message.toLowerCase();
+            }
+        }
+    })
+</script>
+</body>
+</html>

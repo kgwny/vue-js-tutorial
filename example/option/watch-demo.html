@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    監視(watch)は、データの変動を監視します。
+    データ変動時にコールバック関数が呼び出されて、変更前の値oldValと変更後の値newValを引数として渡されます。
+//-->
+<div id="app-206">
+    <form>
+        <input type="text" name="text1" :value="message">
+        <input type="button" @click="change" value="change">
+    </form>
+    <div>変更前: {{ oldmsg }}</div>
+    <div>変更後: {{ newmsg }}</div>
+</div>
+<script>
+    var app206 = new Vue({
+        el: '#app-206',
+        data: {
+            message: 'new',
+            newmsg: 'new',
+            oldmsg: 'old'
+        },
+        watch: {
+            message: function(newVal, oldVal) {
+                this.newmsg = newVal;
+                this.oldmsg = oldVal;
+            }
+        },
+        methods: {
+            change: function(e) {
+                this.message = e.target.form.text1.value;
+            }
+        }
+    })
+</script>
+</body>
+</html>
