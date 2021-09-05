@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    レンダリング関数
+    renderは、templateでは表現できない複雑なテンプレートをJavaScriptの関数を用いて定義します。
+    この例では、level属性で指定した値により、h1～h6を適用します。
+//-->
+<div id="app-212">
+    <my-heading-212 :level="1">Hello!</my-heading-212>
+    <my-heading-212 :level="2">Hello!</my-heading-212>
+    <my-heading-212 :level="3">Hello!</my-heading-212>
+    <my-heading-212 :level="4">Hello!</my-heading-212>
+    <my-heading-212 :level="5">Hello!</my-heading-212>
+    <my-heading-212 :level="6">Hello!</my-heading-212>
+</div>
+<script>
+    Vue.component('my-heading-212', {
+        render: function (createElement) {
+            return createElement('h' + this.level, this.$slots.default)
+        },
+        props: [ 'level' ]
+    })
+    var app212 = new Vue({
+        el: '#app-212',        
+    })
+</script>
+</body>
+</html>

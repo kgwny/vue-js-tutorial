@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    renderError レンダリング時のエラーハンドリング
+    renderError は、開発モードでのみ有効です。
+    render 関数内でエラーが発生した際に、エラー詳細情報などを表示するために用いる。
+    この例では、render関数でthrowされた例外を受け取り、renderErrorでスタック情報を出力します。
+//-->
+<div id="app-213">
+    <app213-heading :level="1">Hello!</app213-heading>
+</div>
+<script>
+    Vue.component('app213-heading', {
+        render: function(createElement) {
+            throw new Error('err213')
+        },
+        renderError : function(ce, err) {
+            return ce('pre', { style: { color: 'red' }}, err.stack)
+        },
+        props: [ 'level' ]
+    })
+    var app213 = new Vue({
+        el: '#app-213',
+    })
+</script>
+</body>
+</html>

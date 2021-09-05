@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    templateを用いて、コンポーネントのテンプレートを指定します。
+//-->
+<div id="app-211">
+    <my-element-211></my-element-211>
+</div>
+<script>
+    Vue.component('my-element-211', {
+        template: '<span>Hello!</span>'
+    })
+    var app211 = new Vue({
+        el: '#app-211',
+    })
+</script>
+</body>
+</html>

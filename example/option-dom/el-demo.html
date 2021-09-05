@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--
+    elを用いて、Vueの適用対象となる要素を指定する
+//-->
+<div id="app-210" v-text="message"></div>
+<script>
+    var app210 = new Vue({
+        el: '#app-210',
+        data: { message: 'Hello!' }
+    })
+</script>
+</body>
+</html>
