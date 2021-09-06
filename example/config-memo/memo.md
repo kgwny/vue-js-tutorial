@@ -1,6 +1,6 @@
 ## silent - ログや警告の出力を抑止する
 
-Vue.config.silent を true にすることにより、Vue のログや警告の出力を抑止します。<br>
+Vue.config.silent を true にすることにより、Vue のログや警告の出力を抑止します。
 
 ```
 Vue.config.silent = true
@@ -8,7 +8,7 @@ Vue.config.silent = true
 
 ## devtools - 開発モードの切り替え
 
-Vue.config.devtools は、開発モードのときは true、本番モードのときは false となります。<br>
+Vue.config.devtools は、開発モードのときは true、本番モードのときは false となります。
 
 ```
 Vue.config.devtools = true
@@ -30,7 +30,7 @@ Vue.config.errorHandler = function(err, vm, info) {...}
 Vue.config.warnHandler は、警告が発生したときの警告ハンドラを定義します。<br>
 msg には警告メッセージ、<br>
 vm にはエラーが発生した Vue コンポーネント、<br>
-info には Vue 固有のエラー情報が渡されます。
+trace には トレース情報が渡されます。
 
 ```
 Vue.config.warnHanler = function(msg, vm, trace) {...}
@@ -39,7 +39,7 @@ Vue.config.warnHanler = function(msg, vm, trace) {...}
 ## ignoredElements - 無視エレメント
 
 Vue.config.ignoredElements には、Vueの外部で作成された Webコンポーネント のカスタムタグなどで無視する対象を指定します。<br>
-正規表現を用いることもできます。<br>
+正規表現を用いることもできます。
 
 ```
 Vue.config.ignoredElements  [
@@ -79,7 +79,7 @@ Alt-H キーが押下されるとハンドラが呼び出されます。<br>
 
 ## performance - パフォーマンス
 
-performance を true にすると、開発者のタイムライン機能でパフォーマンスデータを詳細に表示することができる。
+performance を true にすると、開発者のタイムライン機能でパフォーマンスデータを詳細に表示することができます。<br>
 開発モードでのみ使用可能です。
 
 ```
