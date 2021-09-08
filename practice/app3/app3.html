@@ -1,0 +1,32 @@
+<html>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.min.js'></script>
+<body>
+
+<!-- v-for を用いて配列を表示・配列を追加削除するサンプル -->
+<div id="vue_example"></div>
+
+<script>
+var vue_example = new Vue({
+    el: '#vue_example',
+
+    template: `<div>
+        <ol><li v-for="(it,idx) in items">
+        {{ it }} <button v-on:click="del_item( idx )"> x </button>
+        </li></ol>
+        <input v-model="item" />
+        <button v-on:click="add_item()">Add Item</button>
+        </div>`,
+
+    data: {
+        items: [ 'aaa', 'bbb', 'ccc', ],
+        item: 'Hello Vue.js!',
+    },
+
+    methods: {
+        add_item: function () { this.items.push( this.item ) },
+        del_item: function ( _idx ) { this.items.splice( _idx, 1 ) }
+    }
+})
+</script>
+</body>
+</html>
