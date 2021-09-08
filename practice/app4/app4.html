@@ -1,0 +1,45 @@
+<html>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.min.js'></script>
+<body>
+
+<!-- componentsを用いたサンプル -->
+<div id="vue_example"></div>
+
+<script>
+var vue_example = new Vue({
+    el: '#vue_example',
+
+    components: {
+        'component-A': {
+            props: { title: String, idx: Number },
+            template: `<svg height="60" width="200">
+                <rect x="5" y="5" rx="20" ry="20" width="150" height="50" style="fill:red;stroke:black;stroke-width:5;opacity:0.6" />
+                <text x="35" y="37" >{{ title }}</text>
+                <circle v-on:click="$emit('component-A-del-item', idx )" cx="150" cy="16" r="16" fill="red" />
+                </svg>`,
+        },
+    },
+
+    template: `<div>
+        <ol><li v-for='(it,idx) in items'>
+        <component-A v-bind:title='it' v-bind:idx='idx'
+        v-on:component-A-del-item='del_item( $event )'
+        ></component-A>
+        </li></ol>
+        <input v-model='item' />
+        <button v-on:click='add_item()'>Add Item</button>
+        </div>`,
+
+    data: {
+        items: [ 'aaa', 'bbb', 'ccc', ],
+        item: 'Hello Vue.js!'
+    },
+
+    methods: {
+        add_item: function () { this.items.push( this.item ) },
+        del_item: function ( _idx ) { this.items.splice( _idx, 1 ) }
+    }
+})
+</script>
+</body>
+</html>
