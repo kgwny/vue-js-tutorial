@@ -1,0 +1,58 @@
+<html>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.min.js'></script>
+
+<body>
+
+<!-- watch, Chart.jsを用いた例 -->
+<canvas id='chart' height='200'></canvas><br>
+<div id='vue_example'></div>
+
+<script>
+var vue_example = new Vue( {
+    el: '#vue_example',
+
+    template: `<div>
+        <ol><li v-for="(it,idx) in labels">
+        <button v-on:click="del_item( idx )"> x </button> {{ it }} : {{ values[idx] }} 
+        </li></ol>
+        <input v-model="label">
+        <button v-on:click="add_item()">Add Item</button>
+        </div>`,
+
+    data: {
+        labels: [ 'Red', 'Blue', 'Green' ],
+        values: [ 33, 55, 11, ],
+        label: 'Hello Vue.js!',
+    },
+
+    methods: {
+        add_item: function () {
+            this.labels.push( this.label )
+            this.values.push( Math.floor( Math.random() * 100 ) )
+        },
+        del_item: function ( _idx ) {
+            this.labels.splice( _idx, 1 )
+            this.values.splice( _idx, 1 )
+        },
+    },
+
+    watch: {
+        labels: function () {
+            chart.data.labels = this.labels
+            chart.data.datasets[0].data = this.values
+            chart.update()
+        },
+    },
+})
+
+var chart = new Chart( document.getElementById('chart').getContext('2d'), {
+    type: 'bar',
+    data: {
+        labels: vue_example.labels,
+        datasets: [ { label: 'example', data: vue_example.values, }, ],
+    },
+})
+</script>
+</body>
+</html>
