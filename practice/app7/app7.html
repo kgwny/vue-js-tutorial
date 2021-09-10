@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.jss"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<title>app7</title>
+</head>
+<body>
+<div id="app">
+<table>
+<tr v-for="(value,key) in cities">
+    <td> {{key}} </td>
+    <td> {{value.name}} </td>
+    <td> {{value.population}} </td>
+    <td> {{value.date_mod}} </td>
+</tr>
+</table>
+</div>
+<script src="app7.js"></script>
+</body>
+</html>
