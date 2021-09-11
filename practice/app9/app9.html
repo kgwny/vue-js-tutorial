@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+<title>app9</title>
+</head>
+<body>
+<!-- 動作せず。jsonファイルを読み込むにはサーバを介する必要がある。 -->
+<div id="test">
+    <ul>
+        <li v-for="data in datalists">
+            名前：{{data.name}}　年齢：{{data.age}}</p>
+        </li>
+    </ul>
+</div>
+<script src="app9.js"></script>
+</body>
+</html>
