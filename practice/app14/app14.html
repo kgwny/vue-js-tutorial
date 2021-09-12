@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+</head>
+<body>
+<div id="vue_example"></div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+new Vue({
+    el: '#vue_example',
+    template: `<div>
+        <div class="search">
+            <v-text-field type="text" v-model="keyword" label="検索"></v-text-field>
+        </div>
+        <tr v-for="fruits in filteredFruits" :key="fruits.id">
+        <td v-text="fruits.name"></td>
+        </tr>
+        </div>`,
+
+    data: {
+        keyword: "",
+        fruits: [
+            {id: 1, name: "ストロベリー"},
+            {id: 2, name: "抹茶" },
+            {id: 3, name: "アップル"},
+        ]
+    },
+    computed: {
+        filteredFruits: function() {
+            var fruits = [];
+            for (var i in this.fruits) {
+                var food  = this.fruits[i];
+                if (food.name.indexOf(this.keyword) !== -1) { 
+                    fruits.push(food); 
+                }
+            }
+            return fruits; 
+        }
+    }
+})
+</script>
+</body>
+</html>
