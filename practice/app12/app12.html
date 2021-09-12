@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Test</title>
+</meta>
+</head>
+<body>
+<!--  CoinDesk API を呼び出してBitcoin の価格を表示する -->
+
+<div id="app">
+    {{ info }}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+new Vue({
+    el: '#app',
+    data () {
+        return {
+            info: null
+        }
+    },
+    mounted () {
+        axios
+        .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+        .then(response => (this.info = response))
+    }
+})
+</script>
+</body>
+</html>
